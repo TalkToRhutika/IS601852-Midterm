@@ -1,73 +1,100 @@
-# Advanced Python Calculator Application
+# 🧮 Advanced Python Calculator Application
 
-## Table of Contents
-- [Advanced Python Calculator Application](#advanced-python-calculator-application)
-  - [Table of Contents](#table-of-contents)
-  - [Project Overview](#project-overview)
-  - [Core Functionalities](#core-functionalities)
-  - [Plugin System](#plugin-system)
-  - [Calculation History Management (with Pandas)](#calculation-history-management-with-pandas)
-  - [Professional Logging Practices](#professional-logging-practices)
-  - [Advanced Data Handling with Pandas](#advanced-data-handling-with-pandas)
-  - [Design Patterns for Scalable Architecture](#design-patterns-for-scalable-architecture)
-  - [Testing and Code Quality](#testing-and-code-quality)
-  - [Version Control Best Practices](#version-control-best-practices)
-  - [Documentation](#documentation)
-  - [Video Showcase](#video-showcase)
-  - [Cloning the Repository](#cloning-the-repository)
+A powerful, extensible command-line calculator that supports **arithmetic operations, calculation history management, and plugin integration**. Designed with **Pandas for data handling**, **professional logging**, and **scalable architecture**.
 
-## Project Overview
-This project is an advanced Python-based calculator application, provides a command-line interface (REPL) that supports basic arithmetic operations, manages calculation history, and allows for plugin integration for real-time user interaction. It utilizes Pandas for advanced data management and includes professional logging practices to track application behavior.
+---
 
-## Core Functionalities
-The application features a REPL(Read-Eval-Print Loop) to support:
-- Execute arithmetic operations: addition, subtraction, multiplication, and division.
-- Manage calculation history through commands to show, save, clear, and delete history entries.
-- Access extended functionalities via dynamically loaded plugins.
+## 📌 Table of Contents
+- [🧮 Advanced Python Calculator Application](#-advanced-python-calculator-application)
+  - [📌 Table of Contents](#-table-of-contents)
+  - [🚀 Project Overview](#-project-overview)
+  - [🔧 Core Functionalities](#-core-functionalities)
+  - [🔌 Plugin System](#-plugin-system)
+  - [📜 Calculation History Management (with Pandas)](#-calculation-history-management-with-pandas)
+  - [📊 Advanced Data Handling with Pandas](#-advanced-data-handling-with-pandas)
+  - [📝 Professional Logging Practices](#-professional-logging-practices)
+  - [🏗️ Scalable Architecture with Design Patterns](#️-scalable-architecture-with-design-patterns)
+  - [✅ Testing and Code Quality](#-testing-and-code-quality)
+  - [📝 Documentation](#-documentation)
+  - [🎥 Video Showcase](#-video-showcase)
+  - [📥 Cloning the Repository](#-cloning-the-repository)
 
-## Plugin System
-Create a flexible plugin system for seamless integration of new commands or features:
-- Dynamically load and integrate plugins without altering the core application.
-- Include a menu command in the REPL to list all available plugin commands.
+---
 
-## Calculation History Management (with Pandas)
-Pandas is utilized to manage calculation history effectively. Users can:
-- Load and display history from a CSV file.
-- Save the current history to a CSV file.
-- Clear or delete specific history entries, with these changes reflected in the CSV file.
+## 🚀 Project Overview
+The **Advanced Python Calculator** provides a **command-line interface (REPL)** for performing arithmetic operations, managing calculation history, and dynamically integrating plugins for extended functionality. It employs **Pandas for advanced data handling** and **logging for professional-grade application tracking**.
 
-## Professional Logging Practices
-A comprehensive logging system is established to record:
-- Detailed application operations and data manipulations.
-- Errors and informational messages.
-- Different log message severity levels (INFO, WARNING, ERROR) for effective monitoring.
+---
 
-Dynamic logging configuration is supported through environment variables, allowing customization of logging levels and output destinations.
+## 🔧 Core Functionalities
+This application features a **REPL (Read-Eval-Print Loop)** that supports:
+✅ **Arithmetic Operations:** Addition, subtraction, multiplication, and division.  
+✅ **History Management:** Show, save, clear, and delete history entries.  
+✅ **Extensibility:** Integrate dynamically loaded plugins for enhanced features.  
 
-## Advanced Data Handling with Pandas
-Pandas is employed for:
-- Efficient data reading and writing to CSV files.
-- Management of calculation history, ensuring robust data handling.
+---
 
-## Design Patterns for Scalable Architecture
-Key design patterns are incorporated to address software design challenges:
-- **Facade Pattern**: Simplify complex Pandas data manipulations.
-- **Command Pattern**: Structures RELP commands for efficient management.
-- **Factory Method, Singleton, and Strategy Patterns**: Enhance code flexibility and scalability.
+## 🔌 Plugin System
+The calculator follows a **modular plugin system**, allowing seamless **integration of new commands or features**:
+🔹 **Dynamically load and integrate plugins** without modifying the core application.  
+🔹 **View available plugins using a menu command** inside the REPL.  
 
-## Testing and Code Quality
-The application achieves a minimum of 90% test coverage using Pytest. Code quality is maintained and verified against PEP 8 standards validated by Pylint.
+---
 
-## Version Control Best Practices
-Use logical, well-structured commits. Clearly document feature development and corresponding tests.
+## 📜 Calculation History Management (with Pandas)
+The **calculation history is managed using Pandas**, enabling:  
+📂 **Loading and displaying history from a CSV file.**  
+💾 **Saving the current history to a CSV file.**  
+🗑️ **Clearing or deleting specific history entries,** with real-time updates in the CSV file.  
 
-## Documentation
-Comprehensive documentation is compiled in this README.md, covering setup instructions, usage examples, and an in-depth analysis of architectural decisions, with emphasis on the implementation and impact of chosen design patterns and logging strategy.
+---
 
-## Video Showcase
-A video has been created to showcase the features and functionalities of this calculator application. You can watch the video [here](https://drive.google.com/file/d/1QwZ0yXbqtH3Y802n7kaqVLQK9bEFmy9A/view?usp=sharing).
+## 📊 Advanced Data Handling with Pandas
+Pandas is leveraged for:
+🔹 **Efficient reading/writing of calculation history to CSV files.**  
+🔹 **Ensuring robust and scalable data management.**  
 
-## Cloning the Repository
-To clone the repository, use the following command:
+---
+
+## 📝 Professional Logging Practices
+A **comprehensive logging system** is implemented to track:
+✅ **Detailed application operations and data manipulations.**  
+⚠️ **Warnings and errors for debugging.**  
+📌 **Log messages with different severity levels (INFO, WARNING, ERROR).**  
+
+The logging system is configurable via **environment variables**, allowing customization of logging levels and output destinations.
+
+---
+
+## 🏗️ Scalable Architecture with Design Patterns
+The calculator employs **industry-standard design patterns** for better **scalability and maintainability**:
+- **🎭 Facade Pattern:** Simplifies complex Pandas data manipulations.
+- **📝 Command Pattern:** Structures REPL commands for efficient execution.
+- **🏭 Factory Method, Singleton, and Strategy Patterns:** Enhances modularity, flexibility, and reusability.
+
+---
+
+## ✅ Testing and Code Quality
+📌 **Minimum 93% test coverage** using **Pytest**.  
+📌 Code quality adheres to **PEP 8 standards**, validated using **Pylint**.  
+
+---
+
+## 📝 Documentation
+This `README.md` serves as **comprehensive documentation**, covering:
+📌 **Setup instructions & usage examples.**  
+📌 **Design patterns and logging strategies implemented.**  
+📌 **Project architecture and decision-making process.**  
+
+---
+
+## 🎥 Video Showcase
+A detailed **video showcase** of this calculator application is available!  
+▶️ **[Watch the Video Here]("googledrivelink")**.
+
+---
+
+## 📥 Cloning the Repository
+To **clone the repository**, run the following command:
 ```bash
 git clone https://github.com/your-username/calculator-app.git
