@@ -75,8 +75,8 @@ class App:
     def start(self):
         """Start the REPL for command input."""
         self.load_plugins()
-        logging.info("Application started.")
-        logging.info("Type 'menu' to see commands.")
+        logging.info("*********Application started.*********")
+        logging.info("Type 'menu' to see all commands.")
         logging.info("Type 'exit' to exit.")
         logging.info("Type 'history show' to see history.")
         

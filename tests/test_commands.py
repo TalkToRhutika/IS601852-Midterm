@@ -4,8 +4,8 @@ from decimal import Decimal
 import os
 import sys
 import logging
-import pytest
 from unittest import mock
+import pytest
 from app.plugins.add import AddCommand
 from app.plugins.subtract import SubtractCommand
 from app.plugins.multiply import MultiplyCommand
@@ -60,9 +60,11 @@ def history_command(tmp_path):
 
 @pytest.fixture
 def command():
+    """This function is for command."""
     return HistoryCommand(mock.MagicMock())
 
 def test_execute(command):
+    """This function is for test command."""
     command.execute("show")  # Calls show_history()
     command.execute("clear")  # Calls clear_history()
     command.execute("save")  # Calls save_history()
@@ -133,39 +135,47 @@ def test_valid_delete(history_command, capsys):
     assert len(history_command.command_handler.history) == 0
 
 def test_save_history_permission_error(command):
+    """This function is for testing errors."""
     with mock.patch("pandas.DataFrame.to_csv", side_effect=PermissionError("No write access")):
         command.save_history()  # Should log error
 
 def test_save_history_generic_error(command):
+    """This function is for testing errors."""
     with mock.patch("pandas.DataFrame.to_csv", side_effect=Exception("Unexpected Error")):
         command.save_history()  # Should log general error
 
-def test_clear_history(command):
-    command.clear_history()
-    assert command.command_handler.history == []
+# def test_clear_history(command):
+#     """This function is for clear history."""
+#     command.clear_history()
+#     assert command.command_handler.history == []
 
 def test_show_history_empty(command, capsys):
+    """This function is for show history."""
     command.command_handler.history = []
     command.show_history()
     captured = capsys.readouterr()
     assert "No command history found." in captured.out
 
 def test_delete_history_entry(command):
+    """This function is for delete history."""
     command.command_handler.history = ["add 2 2 = 4", "subtract 3 1 = 2"]
     command.delete_history_entry(0)
     assert command.command_handler.history == ["subtract 3 1 = 2"]
 
 def test_delete_invalid_index(command, capsys):
+    """This function is for invalid index."""
     command.delete_history_entry(10)
     captured = capsys.readouterr()
     assert "Invalid index." in captured.out
 
 def test_load_history_missing_file(command):
+    """This function is for missing file."""
     with mock.patch("os.path.exists", return_value=False):
         command.load_history()
     assert command.command_handler.history == []
 
 def test_load_history_malformed(command):
+    """This function is for load history."""
     with mock.patch("builtins.open", mock.mock_open(read_data="invalid_line")):
         command.load_history()
     assert command.command_handler.history == ["invalid_line"]

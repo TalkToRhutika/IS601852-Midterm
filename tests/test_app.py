@@ -1,7 +1,7 @@
 """Import pytest for testing the App class and its functionalities."""
-import pytest
-from dotenv import load_dotenv
 from unittest import mock
+import pytest
+#from dotenv import load_dotenv
 from app import App
 
 @pytest.mark.parametrize("Command", [
@@ -47,26 +47,20 @@ def test_app_invalid_input_format(capfd, monkeypatch):
     """Test how the REPL handles invalid input formats."""
     inputs = iter(['add 2', 'exit'])  # Missing one argument for 'add'
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    
+
     app = App()
-    
+
     with pytest.raises(SystemExit) as excinfo:
         app.start()
-    
+
     # Capture the REPL output
     captured = capfd.readouterr()
-    
+
     # Check for the correct error message
     assert "Enter valid numbers for the operation." in captured.out  # Adjusted assertion
-    
+
     # Ensure a clean exit (exit code 0)
     assert excinfo.value.code == 0  # Ensure clean exit after invalid input
-
-def test_environment_variable_missing(monkeypatch):
-    """Test how the app handles missing environment variables."""
-    monkeypatch.setattr('os.environ', {})  # Simulate an empty environment
-    app = App()
-    assert app.settings.get('ENVIRONMENT') == 'DEVELOPMENT'  # Default value
 
 def test_environment_variable_missing(monkeypatch):
     """Test how the app handles missing environment variables."""
@@ -99,6 +93,7 @@ def test_logging_configuration(monkeypatch):
 
     app = App()
 
+    assert app is not None
     # Verify if logging configuration was called
     mock_logging_config.assert_called_once_with('logging.conf', disable_existing_loggers=False)
 
@@ -126,7 +121,7 @@ def test_command_registration(monkeypatch):
     mock_plugin_name = 'plugin_name'
 
     app.register_plugin_commands(mock_plugin_module, mock_plugin_name)
-    
+
     print(mock_command_handler_instance.register_command.call_args_list)
     # Verify that the command handler registered the expected commands
     mock_command_handler_instance.register_command.assert_any_call('history', mock.ANY)  # Replace mock.ANY with expected class if needed
