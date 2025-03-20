@@ -90,7 +90,7 @@ This `README.md` serves as **comprehensive documentation**, covering:
 
 ## Video Showcase
 A detailed **video showcase** of this calculator application is available!  
-▶**[Watch the Video Here]("https://drive.google.com/file/d/1sndiYM20NY2e9G5BfHV7JdCr4w-vjkx5/view?usp=drive_link")**.
+▶ **[Watch the Video Here](https://drive.google.com/file/d/1sndiYM20NY2e9G5BfHV7JdCr4w-vjkx5/view?usp=drive_link)**
 
 ---
 
